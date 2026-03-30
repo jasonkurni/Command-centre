@@ -39,7 +39,7 @@ export default function App() {
       <div
         className="grid gap-4 p-4"
         style={{
-          gridTemplateColumns: '30% 1fr 25%',
+          gridTemplateColumns: '30fr 45fr 25fr',
           height: 'calc(100vh - 52px)',
         }}
       >

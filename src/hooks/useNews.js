@@ -102,6 +102,7 @@ export function useNews() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const [fromCache, setFromCache] = useState(false)
+  const [refreshToken, setRefreshToken] = useState(0)
 
   useEffect(() => {
     async function load() {
@@ -153,11 +154,11 @@ export function useNews() {
     }
 
     load()
-  }, [])
+  }, [refreshToken])
 
   const clearCache = () => {
     localStorage.removeItem(CACHE_KEY)
-    setFromCache(false)
+    setRefreshToken((n) => n + 1)
   }
 
   return { articles, loading, error, fromCache, clearCache }
